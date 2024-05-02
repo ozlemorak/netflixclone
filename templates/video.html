@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+    {% for i in videolar %}
+    <video style="width: 100%; height: 100%;" controls autoplay>
+        <source src="{{i.video.url}}" type="video/mp4">
+    </video>
+    {% endfor %}
+{% endblock content %}

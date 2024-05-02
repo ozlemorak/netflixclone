@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+</head>
+<body>
+
+{% block content %}
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data" class="w-50 m-auto p-3 border border-1 rounded-2 text-white my-5">
+            <h2 class="text-white text-center fw-bold">Kayıt Ol</h2>
+            {% csrf_token %}
+            {% comment %} {{form}} {% endcomment %}
+
+            <label class="text-white fw-bold">İsim</label>
+            <input type="text" name="isim" class="form-control">
+
+            <label class="text-white fw-bold">Soyisim</label>
+            <input type="text" name="soyisim" class="form-control">
+
+            <label class="text-white fw-bold">Email</label>
+            <input type="email" name="email" class="form-control">
+
+            <label class="text-white fw-bold">Resim</label>
+            <input type="file" name="resim" class="form-control">
+
+            <label class="text-white fw-bold">Telefon No</label>
+            <input type="tel" name="tel" class="form-control">
+
+            <label class="text-white fw-bold">Doğum Tarihi</label>
+            <input type="date" name="dogum" class="form-control">
+
+            <label class="text-white fw-bold">Şifre</label>
+            <input type="password" name="sifre1" class="form-control">
+
+            <label class="text-white fw-bold">Şifre Onay</label>
+            <input type="password" name="sifre2" class="form-control">
+
+            <input type="submit" value="Kayıt Ol" class="btn btn-danger mt-3">
+        </form>
+    </div>
+
+{% endblock content %}
+
+</body>
+</html>
